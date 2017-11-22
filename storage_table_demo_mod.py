@@ -103,24 +103,24 @@ print('Created entry for Honda...\n')
 # A row key is a unique ID for each entity in the partition
 # These two properties are used as a primary key to index the Table. This makes queries much quicker.
 
- coffee = Entity()
- coffee.PartitionKey = ' coffeestore'
- coffee.RowKey = '005'
- coffee.make = 'Dark'
- coffee.flavor = 'Heavy'
- coffee.size = 'Tall'
- coffee.cost = 3.95
+coffee = Entity()
+coffee.PartitionKey = ' coffeestore'
+coffee.RowKey = '005'
+coffee.make = 'Dark'
+coffee.flavor = 'Heavy'
+coffee.size = 'Tall'
+coffee.cost = 3.95
 table_service.insert_entity('itemstable',  coffee)
 print('Created entry tall dark heavy coffee...\n')
 time.sleep(1)
 
- coffee = Entity()
- coffee.PartitionKey = ' coffeestore'
- coffee.RowKey = '006'
- coffee.make = 'Blonde'
- coffee.flavor = 'Medium'
- coffee.size = 'Grande'
- coffee.cost = 5.95
+coffee = Entity()
+coffee.PartitionKey = ' coffeestore'
+coffee.RowKey = '006'
+coffee.make = 'Blonde'
+coffee.flavor = 'Medium'
+coffee.size = 'Grande'
+coffee.cost = 5.95
 table_service.insert_entity('itemstable',  coffee)
 print('Created entry for grande blonde medium coffee...\n')
 time.sleep(1)
