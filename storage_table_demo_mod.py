@@ -109,7 +109,7 @@ coffee.RowKey = '005'
 coffee.make = 'Dark'
 coffee.flavor = 'Heavy'
 coffee.size = 'Tall'
-coffee.cost = 3.95
+coffee.price = 3.95
 table_service.insert_entity('itemstable',  coffee)
 print('Created entry tall dark heavy coffee...\n')
 time.sleep(1)
@@ -120,7 +120,7 @@ coffee.RowKey = '006'
 coffee.make = 'Blonde'
 coffee.flavor = 'Medium'
 coffee.size = 'Grande'
-coffee.cost = 5.95
+coffee.price = 5.95
 table_service.insert_entity('itemstable',  coffee)
 print('Created entry for grande blonde medium coffee...\n')
 time.sleep(1)
@@ -137,6 +137,9 @@ items = table_service.query_entities('itemstable', filter="PartitionKey eq 'cars
 for item in items:
     print('Name: ' + item.make)
     print('Cost: ' + str(item.cost) + '\n')
+
+print('With some data in our Azure Storage Table, we can query the data.\nLet\'s see what the coffee menu looks like.')
+raw_input('Press Enter to continue...')
 
 items = table_service.query_entities('itemstable', filter="PartitionKey eq ' coffeestore'", select='make,price')
 for item in items:
