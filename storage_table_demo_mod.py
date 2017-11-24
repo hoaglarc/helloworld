@@ -95,6 +95,7 @@ cars.RowKey = '003'
 cars.make = 'Honda'
 cars.model = 'Pilot'
 cars.color = 'Cherry'
+cars.year = '2018'
 cars.cost = 50000
 table_service.insert_entity('itemstable', cars)
 print('Created entry for Honda...\n')
@@ -143,7 +144,7 @@ raw_input('Press Enter to continue...')
 
 items = table_service.query_entities('itemstable', filter="PartitionKey eq ' coffeestore'", select='make,price')
 for item in items:
-    print('Name: ' + item.make)
+    print('Name: ' + coffee.make)
     print('Price: ' + str(item.price) + '\n')
 
 time.sleep(1)
